@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title>Login Page</title>
+    </head>
+
+    <body>
+
+        <p>Welcome to ING!</p>
+        <p>Please enter your name and your card's PIN number:</p>
+
+        <div>
+            <!-- Login Form -->
+            <form th:action="@{/authenticateTheClient}"
+                  method="POST">
+
+                <!-- Check for login error -->
+               <div th:if="${param.error}">
+                   <p style="color:red"> Invalid username or PIN. </p>
+               </div>
+
+                <!-- Check for logout -->
+               <div th:if="${param.logout}">
+                   <p style="color:red"> You have been logged out. </p>
+               </div>
+
+
+               <!-- User name -->
+                <div>
+                    <input type="text" name="username" placeholder="USERNAME">
+                </div>
+
+                <!-- Password/PIN -->
+                <div>
+                    <input type="password" name="password" placeholder="PIN">
+                </div>
+
+                <!-- Login/Submit Button -->
+                <div>
+                    <button type="submit">Login</button>
+                </div>
+
+            </form>
+        </div>
+    </body>
+</html>
