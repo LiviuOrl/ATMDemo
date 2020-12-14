@@ -29,9 +29,11 @@ The app has 4 endpoints:
         Password: (no password)
 
 
-As a Java 8 new feature I've used a functional interface (CommandlineRunner to populate the DB at startup)
-I've created an integration test where I inserted an User in the DB and afterwards I read the new row from the DB
+As a Java 8 new feature I've used a functional interface (CommandlineRunner to populate the DB at startup).
+I've created an integration test where I inserted an User in the DB and afterwards I read the new row from the DB.
 and compared it to the object I've inserted.
+
+I've added the compiled app (JAR) to GitHub in case you want to run it locally.
 
 More details are present in the code's comments and in the Github commit messages
 GitHub page: https://github.com/LiviuOrl/ATMDemo
