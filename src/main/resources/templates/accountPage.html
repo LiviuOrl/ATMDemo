@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+    <head>
+        <meta charset="UTF-8">
+        <title>Account Page</title>
+    </head>
+
+    <body>
+
+        <div>
+            <!-- If user exists, show user account details -->
+            <div th:if="${session.user}" >
+
+                <h3 th:text="'Welcome ' + ${session.user.userName} "></h3>
+                <p th:text="'Your current amount is: ' + ${session.user.amount} "></p>
+            </div>
+        </div>
+
+        <br>
+        <br>
+
+        <!-- Add a logout button -->
+        <form th:action="@{/logout}"
+              method="POST">
+
+            <input type="submit" value="Logout" />
+        </form>
+    </body>
+</html>
